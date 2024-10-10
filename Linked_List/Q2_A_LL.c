@@ -41,7 +41,7 @@ int removeNode(LinkedList *ll, int index);
 int main()
 {
 	LinkedList ll1, ll2;
-	int c, i, j;
+	int c, i, j; 
 	c = 1;
 	//Initialize the linked list 1 as an empty linked list
 	ll1.head = NULL;
@@ -104,6 +104,17 @@ int main()
 void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
 {
     /* add your code here */
+	ListNode * cur = ll1->head;
+	ListNode * temp;
+	int idx = 1;
+	while (cur != NULL || ll2->size != 0)
+	{
+		cur = cur->next;
+		temp = findNode(ll2, 0);
+		insertNode(ll1, idx, temp->item);
+		idx += 2;
+		removeNode(ll2, 0);
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -141,7 +152,7 @@ void removeAllItems(LinkedList *ll)
 }
 
 
-ListNode *findNode(LinkedList *ll, int index){
+ListNode* findNode(LinkedList *ll, int index){
 
 	ListNode *temp;
 

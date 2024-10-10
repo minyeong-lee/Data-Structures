@@ -58,6 +58,7 @@ int main()
 	printf("2: Split the linked list into two linked lists, frontList and backList:\n");
 	printf("0: Quit:\n");
 
+	c = -1;
 	while (c != 0)
 	{
 	    printf("Please input your choice(1/2/0): ");
